@@ -5,6 +5,7 @@ Generates Japanese salary information pages for programmatic SEO.
 import os
 import json
 from datetime import datetime
+from urllib.parse import quote
 
 SITE_URL = "https://richend0913.github.io/salary-navi"
 ADSENSE = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6327505164684489" crossorigin="anonymous"></script>'
@@ -593,6 +594,119 @@ def slug_for_title(title):
     return None
 
 
+# Affiliate settings
+AMAZON_TAG = "okuritegift-22"
+RAKUTEN_AFF_ID = "522e40a0.f2dc4208.522e40a1.385f875e"
+
+# Per-job affiliate keywords: (amazon_book_keywords, rakuten_study_keywords, skill_amazon_keywords, skill_rakuten_keywords)
+AFFILIATE_KEYWORDS = {
+    "プログラマー": ("プログラマー 転職 本", "プログラミング 資格 教材", "プログラミング 入門 本", "プログラミング 学習 教材"),
+    "システムエンジニア": ("システムエンジニア 転職 本", "応用情報技術者 テキスト", "SE 設計 入門 本", "情報処理技術者 教材"),
+    "Webデザイナー": ("Webデザイナー 転職 本", "ウェブデザイン技能検定 テキスト", "Webデザイン 入門 本", "デザイン 学習 教材"),
+    "データサイエンティスト": ("データサイエンティスト 転職 本", "統計検定 テキスト", "データサイエンス 入門 本", "Python データ分析 教材"),
+    "インフラエンジニア": ("インフラエンジニア 転職 本", "AWS認定 テキスト", "ネットワーク サーバー 入門 本", "LPIC 教材"),
+    "プロジェクトマネージャー": ("プロジェクトマネージャー 転職 本", "PMP テキスト", "プロジェクトマネジメント 入門 本", "プロジェクトマネージャ試験 教材"),
+    "AIエンジニア": ("AIエンジニア 転職 本", "E資格 テキスト", "機械学習 深層学習 入門 本", "AI 人工知能 学習 教材"),
+    "ネットワークエンジニア": ("ネットワークエンジニア 転職 本", "CCNA テキスト", "ネットワーク 入門 本", "ネットワークスペシャリスト 教材"),
+    "ITコンサルタント": ("ITコンサルタント 転職 本", "ITストラテジスト テキスト", "コンサルタント 入門 本", "中小企業診断士 教材"),
+    "医師": ("医師 キャリア 本", "医師国家試験 テキスト", "医学 入門 本", "医師国家試験 教材"),
+    "看護師": ("看護師 転職 本", "看護師国家試験 テキスト", "看護 入門 本", "看護師 資格 教材"),
+    "薬剤師": ("薬剤師 転職 本", "薬剤師国家試験 テキスト", "薬学 入門 本", "薬剤師 資格 教材"),
+    "歯科医師": ("歯科医師 キャリア 本", "歯科医師国家試験 テキスト", "歯科 入門 本", "歯科医師 資格 教材"),
+    "理学療法士": ("理学療法士 転職 本", "理学療法士国家試験 テキスト", "リハビリテーション 入門 本", "理学療法士 資格 教材"),
+    "臨床検査技師": ("臨床検査技師 転職 本", "臨床検査技師国家試験 テキスト", "臨床検査 入門 本", "臨床検査技師 資格 教材"),
+    "銀行員": ("銀行員 転職 本", "銀行業務検定 テキスト", "金融 入門 本", "FP技能士 教材"),
+    "証券アナリスト": ("証券アナリスト 転職 本", "証券アナリスト CMA テキスト", "証券分析 入門 本", "証券アナリスト 資格 教材"),
+    "ファイナンシャルプランナー": ("ファイナンシャルプランナー 転職 本", "FP技能士 テキスト", "FP 入門 本", "ファイナンシャルプランナー 資格 教材"),
+    "公認会計士": ("公認会計士 転職 本", "公認会計士試験 テキスト", "会計 入門 本", "公認会計士 資格 教材"),
+    "税理士": ("税理士 転職 本", "税理士試験 テキスト", "税務 入門 本", "税理士 資格 教材"),
+    "アクチュアリー": ("アクチュアリー キャリア 本", "アクチュアリー試験 テキスト", "保険数学 入門 本", "アクチュアリー 資格 教材"),
+    "国家公務員": ("国家公務員 転職 本", "国家公務員試験 テキスト", "公務員 入門 本", "公務員試験 教材"),
+    "地方公務員": ("地方公務員 転職 本", "地方公務員試験 テキスト", "公務員 入門 本", "地方公務員試験 教材"),
+    "警察官": ("警察官 採用 本", "警察官採用試験 テキスト", "警察 入門 本", "警察官 試験 教材"),
+    "消防士": ("消防士 採用 本", "消防士採用試験 テキスト", "消防 入門 本", "消防士 試験 教材"),
+    "教師": ("教師 転職 本", "教員採用試験 テキスト", "教育 入門 本", "教員採用試験 教材"),
+    "大学教授": ("大学教授 キャリア 本", "博士課程 研究 テキスト", "研究者 入門 本", "アカデミア 研究 教材"),
+    "弁護士": ("弁護士 転職 本", "司法試験 テキスト", "法律 入門 本", "司法試験 教材"),
+    "建築士": ("建築士 転職 本", "一級建築士 テキスト", "建築 入門 本", "建築士 資格 教材"),
+    "パイロット": ("パイロット キャリア 本", "航空 操縦士 テキスト", "航空 入門 本", "パイロット 資格 教材"),
+    "美容師": ("美容師 転職 本", "美容師国家試験 テキスト", "美容 入門 本", "美容師 資格 教材"),
+    "保育士": ("保育士 転職 本", "保育士試験 テキスト", "保育 入門 本", "保育士 資格 教材"),
+    "不動産営業": ("不動産 転職 本", "宅建 テキスト", "不動産 入門 本", "宅地建物取引士 教材"),
+    "薬品メーカーMR": ("MR 転職 本", "MR認定試験 テキスト", "製薬 MR 入門 本", "MR認定 資格 教材"),
+    "社会保険労務士": ("社労士 転職 本", "社会保険労務士試験 テキスト", "社労士 入門 本", "社労士 資格 教材"),
+    "司法書士": ("司法書士 転職 本", "司法書士試験 テキスト", "司法書士 入門 本", "司法書士 資格 教材"),
+    "管理栄養士": ("管理栄養士 転職 本", "管理栄養士国家試験 テキスト", "栄養学 入門 本", "管理栄養士 資格 教材"),
+    "公認心理師": ("公認心理師 転職 本", "公認心理師試験 テキスト", "心理学 入門 本", "公認心理師 資格 教材"),
+    "行政書士": ("行政書士 転職 本", "行政書士試験 テキスト", "行政書士 入門 本", "行政書士 資格 教材"),
+    "電気工事士": ("電気工事士 転職 本", "電気工事士試験 テキスト", "電気工事 入門 本", "電気工事士 資格 教材"),
+    "Webマーケター": ("Webマーケター 転職 本", "ウェブ解析士 テキスト", "Webマーケティング 入門 本", "デジタルマーケティング 教材"),
+    "獣医師": ("獣医師 キャリア 本", "獣医師国家試験 テキスト", "獣医学 入門 本", "獣医師 資格 教材"),
+    "通訳・翻訳": ("通訳 翻訳 転職 本", "英検1級 TOEIC テキスト", "通訳 翻訳 入門 本", "英語 資格 教材"),
+    "調理師": ("調理師 転職 本", "調理師免許 テキスト", "料理 入門 本", "調理師 資格 教材"),
+}
+
+
+def make_amazon_link(keywords):
+    """Generate Amazon affiliate search link."""
+    return f"https://www.amazon.co.jp/s?k={quote(keywords)}&tag={AMAZON_TAG}"
+
+
+def make_rakuten_link(keywords):
+    """Generate Rakuten affiliate search link."""
+    rakuten_search = f"https://search.rakuten.co.jp/search/mall/{quote(keywords)}/"
+    return f"https://hb.afl.rakuten.co.jp/ichiba/{RAKUTEN_AFF_ID}/?pc={quote(rakuten_search)}&link_type=hybrid_url"
+
+
+def generate_affiliate_section(job_title):
+    """Generate affiliate HTML sections for a job page."""
+    kw = AFFILIATE_KEYWORDS.get(job_title, (f"{job_title} 転職 本", f"{job_title} 資格 テキスト", f"{job_title} 入門 本", f"{job_title} 資格 教材"))
+    book_kw, study_kw, skill_book_kw, skill_study_kw = kw
+
+    amazon_book = make_amazon_link(book_kw)
+    rakuten_study = make_rakuten_link(study_kw)
+    amazon_skill = make_amazon_link(skill_book_kw)
+    rakuten_skill = make_rakuten_link(skill_study_kw)
+
+    return f'''
+    <div class="card affiliate-card">
+      <h2>転職サービスおすすめ</h2>
+      <p class="desc-text" style="margin-bottom:16px">{job_title}への転職・キャリアチェンジに役立つ書籍や教材をご紹介します。</p>
+      <div class="affiliate-items">
+        <div class="affiliate-item">
+          <div class="affiliate-label">この職業に転職するためのおすすめ本</div>
+          <p class="affiliate-desc">転職活動の進め方や業界知識を身につけるための厳選書籍をAmazonで探せます。</p>
+          <div class="affiliate-buttons">
+            <a href="{amazon_book}" class="affiliate-btn affiliate-btn-main" target="_blank" rel="noopener noreferrer nofollow">Amazonで書籍を探す</a>
+          </div>
+        </div>
+        <div class="affiliate-item">
+          <div class="affiliate-label">資格取得のための教材</div>
+          <p class="affiliate-desc">資格試験の対策テキストや問題集を楽天市場で探せます。</p>
+          <div class="affiliate-buttons">
+            <a href="{rakuten_study}" class="affiliate-btn affiliate-btn-main" target="_blank" rel="noopener noreferrer nofollow">楽天市場で教材を探す</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card affiliate-card">
+      <h2>スキルアップにおすすめ</h2>
+      <p class="desc-text" style="margin-bottom:16px">{job_title}としてキャリアアップするための学習教材をご紹介します。</p>
+      <div class="affiliate-items">
+        <div class="affiliate-item">
+          <div class="affiliate-label">スキルアップのためのおすすめ本</div>
+          <p class="affiliate-desc">実務で役立つスキルを身につけるための書籍をAmazonで探せます。</p>
+          <div class="affiliate-buttons">
+            <a href="{amazon_skill}" class="affiliate-btn affiliate-btn-main" target="_blank" rel="noopener noreferrer nofollow">Amazonで書籍を探す</a>
+            <a href="{rakuten_skill}" class="affiliate-btn-sub" target="_blank" rel="noopener noreferrer nofollow">楽天市場で教材を探す &raquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+'''
+
+
 def generate_job_page(job, category_name):
     """Generate a single job HTML page."""
     title = job["title"]
@@ -750,6 +864,8 @@ def generate_job_page(job, category_name):
     </div>
 
     <div class="ad-space">広告</div>
+
+{generate_affiliate_section(title)}
 
     <div class="card">
       <h2>関連する職業の年収</h2>

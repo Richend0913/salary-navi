@@ -78,6 +78,20 @@ body { font-family: -apple-system, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', 
 .stat-box .stat-label { font-size: .75rem; color: #94a3b8; }
 .stat-box .stat-value { font-size: 1.2rem; font-weight: 700; color: #6366f1; }
 
+/* Affiliate sections */
+.affiliate-card { background: #fffdf5; border: 1px solid #f0e6c0; }
+.affiliate-card h2 { border-bottom-color: #f0e6c0; }
+.affiliate-items { display: flex; flex-direction: column; gap: 20px; }
+.affiliate-item { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px; }
+.affiliate-label { font-size: 1rem; font-weight: 600; color: #1e293b; margin-bottom: 6px; }
+.affiliate-desc { font-size: .85rem; color: #64748b; margin-bottom: 14px; }
+.affiliate-buttons { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.affiliate-btn { display: inline-block; padding: 12px 28px; border-radius: 10px; font-size: .95rem; font-weight: 600; text-decoration: none; text-align: center; cursor: pointer; transition: all .2s; }
+.affiliate-btn-main { background: #6366f1; color: #fff; }
+.affiliate-btn-main:hover { background: #4f46e5; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(99,102,241,.25); }
+.affiliate-btn-sub { font-size: .85rem; color: #6366f1; text-decoration: none; font-weight: 500; }
+.affiliate-btn-sub:hover { text-decoration: underline; }
+
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.3rem; }
   .salary-big { font-size: 2.4rem; }

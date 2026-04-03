@@ -598,6 +598,10 @@ def slug_for_title(title):
 AMAZON_TAG = "okuritegift-22"
 RAKUTEN_AFF_ID = "522e40a0.f2dc4208.522e40a1.385f875e"
 
+# A8net転職エージェントリンク（登録後にURLを差し替えてください）
+# 例: "https://px.a8.net/svt/ejp?a8mat=XXXXX+YYYYY+ZZZZZ+WWWWW"
+A8NET_TENSHOKU_URL = ""  # A8net登録後にここにURLを設定
+
 # Per-job affiliate keywords: (amazon_book_keywords, rakuten_study_keywords, skill_amazon_keywords, skill_rakuten_keywords)
 AFFILIATE_KEYWORDS = {
     "プログラマー": ("プログラマー 転職 本", "プログラミング 資格 教材", "プログラミング 入門 本", "プログラミング 学習 教材"),
@@ -658,6 +662,58 @@ def make_rakuten_link(keywords):
     return f"https://hb.afl.rakuten.co.jp/ichiba/{RAKUTEN_AFF_ID}/?pc={quote(rakuten_search)}&link_type=hybrid_url"
 
 
+def generate_tenshoku_banner():
+    """Generate transfer agent CTA banner (A8net or Amazon/Rakuten fallback)."""
+    if A8NET_TENSHOKU_URL:
+        return f'''
+    <div class="affiliate-banner" style="background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:24px;border-radius:12px;text-align:center;margin:24px 0;">
+      <p style="font-size:1.1rem;margin-bottom:12px;">💼 年収アップを目指すなら転職エージェントに相談</p>
+      <a href="{A8NET_TENSHOKU_URL}" target="_blank" rel="noopener noreferrer nofollow" style="display:inline-block;background:#fff;color:#764ba2;padding:12px 32px;border-radius:8px;font-weight:bold;text-decoration:none;">無料で転職相談する →</a>
+    </div>'''
+    else:
+        amazon_tenshoku = make_amazon_link("転職 成功 本 ベストセラー")
+        return f'''
+    <div class="affiliate-banner" style="background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:24px;border-radius:12px;text-align:center;margin:24px 0;">
+      <p style="font-size:1.1rem;margin-bottom:12px;">💼 転職を成功させるためのおすすめ書籍</p>
+      <a href="{amazon_tenshoku}" target="_blank" rel="noopener noreferrer nofollow" style="display:inline-block;background:#fff;color:#764ba2;padding:12px 32px;border-radius:8px;font-weight:bold;text-decoration:none;">Amazonで転職本を探す →</a>
+    </div>'''
+
+
+def generate_salary_up_section(is_job_page=False):
+    """Generate the '年収を上げる3つの方法' section."""
+    prefix = "../" if is_job_page else ""
+    if A8NET_TENSHOKU_URL:
+        tenshoku_href = A8NET_TENSHOKU_URL
+        tenshoku_rel = ' rel="noopener noreferrer nofollow"'
+        tenshoku_sub = "転職エージェントに無料相談"
+    else:
+        tenshoku_href = make_amazon_link("転職 年収アップ 本")
+        tenshoku_rel = ' rel="noopener noreferrer nofollow"'
+        tenshoku_sub = "Amazonで転職本を探す"
+
+    return f'''
+  <section style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:32px;margin:24px 0;max-width:900px;margin-left:auto;margin-right:auto;">
+    <h2 style="text-align:center;font-size:1.4rem;color:#1e293b;margin-bottom:24px;">年収を上げる3つの方法</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <a href="{tenshoku_href}" target="_blank"{tenshoku_rel} style="flex:1;min-width:200px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:20px;border-radius:10px;text-align:center;text-decoration:none;font-weight:bold;">
+        <div style="font-size:1.5rem;margin-bottom:8px;">💼</div>
+        <div style="font-size:1rem;margin-bottom:6px;">転職で上げる</div>
+        <div style="font-size:.8rem;opacity:.85;">{tenshoku_sub}</div>
+      </a>
+      <a href="{prefix}../fukugyo-navi/" style="flex:1;min-width:200px;background:linear-gradient(135deg,#f093fb,#f5576c);color:#fff;padding:20px;border-radius:10px;text-align:center;text-decoration:none;font-weight:bold;">
+        <div style="font-size:1.5rem;margin-bottom:8px;">💻</div>
+        <div style="font-size:1rem;margin-bottom:6px;">副業で上げる</div>
+        <div style="font-size:.8rem;opacity:.85;">副業ナビで副業を探す</div>
+      </a>
+      <a href="{prefix}../shikaku-navi/" style="flex:1;min-width:200px;background:linear-gradient(135deg,#4facfe,#00f2fe);color:#fff;padding:20px;border-radius:10px;text-align:center;text-decoration:none;font-weight:bold;">
+        <div style="font-size:1.5rem;margin-bottom:8px;">📜</div>
+        <div style="font-size:1rem;margin-bottom:6px;">資格で上げる</div>
+        <div style="font-size:.8rem;opacity:.85;">資格ナビで資格を調べる</div>
+      </a>
+    </div>
+  </section>'''
+
+
 def generate_affiliate_section(job_title):
     """Generate affiliate HTML sections for a job page."""
     kw = AFFILIATE_KEYWORDS.get(job_title, (f"{job_title} 転職 本", f"{job_title} 資格 テキスト", f"{job_title} 入門 本", f"{job_title} 資格 教材"))
@@ -668,23 +724,29 @@ def generate_affiliate_section(job_title):
     amazon_skill = make_amazon_link(skill_book_kw)
     rakuten_skill = make_rakuten_link(skill_study_kw)
 
+    tenshoku_cta = ""
+    if A8NET_TENSHOKU_URL:
+        tenshoku_cta = f'''
+        <div class="affiliate-item">
+          <div class="affiliate-label">転職エージェントに無料相談</div>
+          <p class="affiliate-desc">プロのキャリアアドバイザーが{job_title}への転職をサポート。年収交渉や非公開求人の紹介も。</p>
+          <div class="affiliate-buttons">
+            <a href="{A8NET_TENSHOKU_URL}" class="affiliate-btn affiliate-btn-main" target="_blank" rel="noopener noreferrer nofollow">無料で転職相談する</a>
+          </div>
+        </div>'''
+
     return f'''
     <div class="card affiliate-card">
-      <h2>転職サービスおすすめ</h2>
-      <p class="desc-text" style="margin-bottom:16px">{job_title}への転職・キャリアチェンジに役立つ書籍や教材をご紹介します。</p>
+      <h2>転職・キャリアアップにおすすめ</h2>
+      <p class="desc-text" style="margin-bottom:16px">{job_title}への転職・キャリアチェンジに役立つサービスや教材をご紹介します。</p>
       <div class="affiliate-items">
+{tenshoku_cta}
         <div class="affiliate-item">
-          <div class="affiliate-label">この職業に転職するためのおすすめ本</div>
-          <p class="affiliate-desc">転職活動の進め方や業界知識を身につけるための厳選書籍をAmazonで探せます。</p>
+          <div class="affiliate-label">転職・キャリアのおすすめ本</div>
+          <p class="affiliate-desc">転職活動の進め方や業界知識を身につけるための厳選書籍。</p>
           <div class="affiliate-buttons">
             <a href="{amazon_book}" class="affiliate-btn affiliate-btn-main" target="_blank" rel="noopener noreferrer nofollow">Amazonで書籍を探す</a>
-          </div>
-        </div>
-        <div class="affiliate-item">
-          <div class="affiliate-label">資格取得のための教材</div>
-          <p class="affiliate-desc">資格試験の対策テキストや問題集を楽天市場で探せます。</p>
-          <div class="affiliate-buttons">
-            <a href="{rakuten_study}" class="affiliate-btn affiliate-btn-main" target="_blank" rel="noopener noreferrer nofollow">楽天市場で教材を探す</a>
+            <a href="{rakuten_study}" class="affiliate-btn-sub" target="_blank" rel="noopener noreferrer nofollow">楽天市場で教材を探す &raquo;</a>
           </div>
         </div>
       </div>
@@ -696,7 +758,7 @@ def generate_affiliate_section(job_title):
       <div class="affiliate-items">
         <div class="affiliate-item">
           <div class="affiliate-label">スキルアップのためのおすすめ本</div>
-          <p class="affiliate-desc">実務で役立つスキルを身につけるための書籍をAmazonで探せます。</p>
+          <p class="affiliate-desc">実務で役立つスキルを身につけるための書籍。</p>
           <div class="affiliate-buttons">
             <a href="{amazon_skill}" class="affiliate-btn affiliate-btn-main" target="_blank" rel="noopener noreferrer nofollow">Amazonで書籍を探す</a>
             <a href="{rakuten_skill}" class="affiliate-btn-sub" target="_blank" rel="noopener noreferrer nofollow">楽天市場で教材を探す &raquo;</a>
@@ -874,11 +936,15 @@ def generate_job_page(job, category_name):
     </div>
   </main>
 
+{generate_tenshoku_banner()}
+
   <div style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;border-radius:12px;padding:20px;text-align:center;margin:24px 0;">
     <div style="font-size:.85rem;color:#1e40af;font-weight:600;margin-bottom:8px;">転職活動中の方へ</div>
     <div style="font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:12px;">履歴書・職務経歴書をサクッと作成</div>
     <a href="https://richend0913.github.io/rirekisho-maker/" style="display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;">履歴書メーカーを使う</a>
   </div>
+
+{generate_salary_up_section(is_job_page=True)}
 
   <footer class="footer">
     <p>&copy; {YEAR} 年収ナビ（Salary Navigator）- 日本の職業別年収データ</p>
@@ -976,6 +1042,9 @@ def generate_index():
     <div class="ad-space">広告</div>
 
 {categories_html}
+
+{generate_tenshoku_banner()}
+
     <div class="ad-space">広告</div>
 
     <div class="card">
@@ -992,6 +1061,8 @@ def generate_index():
     <div style="font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:12px;">履歴書・職務経歴書をサクッと作成</div>
     <a href="https://richend0913.github.io/rirekisho-maker/" style="display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;">履歴書メーカーを使う</a>
   </div>
+
+{generate_salary_up_section(is_job_page=False)}
 
   <footer class="footer">
     <p>&copy; {YEAR} 年収ナビ（Salary Navigator）- 日本の職業別年収データ</p>

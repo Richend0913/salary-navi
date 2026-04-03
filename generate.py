@@ -598,9 +598,10 @@ def slug_for_title(title):
 AMAZON_TAG = "okuritegift-22"
 RAKUTEN_AFF_ID = "522e40a0.f2dc4208.522e40a1.385f875e"
 
-# A8net転職エージェントリンク（登録後にURLを差し替えてください）
-# 例: "https://px.a8.net/svt/ejp?a8mat=XXXXX+YYYYY+ZZZZZ+WWWWW"
-A8NET_TENSHOKU_URL = ""  # A8net登録後にここにURLを設定
+# 転職アフィリエイトリンク（転職AGENT Navi推奨 - 幅広い職種カバー）
+# A8netはエンジニア/コンサル系に偏りがち。転職AGENT Naviなら全職種対応。
+# 登録後にアフィリエイトURLを設定してください。
+A8NET_TENSHOKU_URL = ""  # 転職AGENT NaviのアフィリエイトURLを設定
 
 # Per-job affiliate keywords: (amazon_book_keywords, rakuten_study_keywords, skill_amazon_keywords, skill_rakuten_keywords)
 AFFILIATE_KEYWORDS = {

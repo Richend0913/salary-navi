@@ -824,6 +824,39 @@ def generate_job_page(job, category_name):
         },
     }, ensure_ascii=False)
 
+    # Find the category display name from category_name (which is actually the slug)
+    cat_display_name = category_name
+    for cat in CATEGORIES:
+        if cat["slug"] == category_name:
+            cat_display_name = cat["name"]
+            break
+
+    # BreadcrumbList JSON-LD
+    breadcrumb_jsonld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "年収ナビ",
+                "item": SITE_URL,
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": cat_display_name,
+                "item": f"{SITE_URL}/#{category_name}",
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": f"{title}の年収",
+                "item": f"{SITE_URL}/jobs/{job['slug']}.html",
+            },
+        ],
+    }, ensure_ascii=False)
+
     html = f'''<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -837,10 +870,14 @@ def generate_job_page(job, category_name):
 <meta property="og:type" content="article">
 <meta property="og:url" content="{SITE_URL}/jobs/{job['slug']}.html">
 <meta property="og:site_name" content="年収ナビ">
+<meta property="og:image" content="{SITE_URL}/images/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE_URL}/images/ogp.png">
 <link rel="canonical" href="{SITE_URL}/jobs/{job['slug']}.html">
 <link rel="stylesheet" href="../css/style.css">
 {ADSENSE}
 <script type="application/ld+json">{jsonld}</script>
+<script type="application/ld+json">{breadcrumb_jsonld}</script>
 </head>
 <body>
   <header class="header">
@@ -848,6 +885,7 @@ def generate_job_page(job, category_name):
       <a href="../index.html" class="logo">年収ナビ<span>Salary Navigator</span></a>
       <nav class="nav">
         <a href="../index.html">トップ</a>
+        <a href="../ranking.html">ランキング</a>
         <a href="../index.html#it">IT・エンジニア</a>
         <a href="../index.html#medical">医療</a>
         <a href="../index.html#finance">金融</a>
@@ -998,6 +1036,9 @@ def generate_index():
 <meta property="og:type" content="website">
 <meta property="og:url" content="{SITE_URL}">
 <meta property="og:site_name" content="年収ナビ">
+<meta property="og:image" content="{SITE_URL}/images/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE_URL}/images/ogp.png">
 <link rel="canonical" href="{SITE_URL}/">
 <link rel="stylesheet" href="css/style.css">
 {ADSENSE}
@@ -1008,6 +1049,7 @@ def generate_index():
     <div class="header-inner">
       <a href="index.html" class="logo">年収ナビ<span>Salary Navigator</span></a>
       <nav class="nav">
+        <a href="ranking.html">ランキング</a>
         <a href="#it">IT・エンジニア</a>
         <a href="#medical">医療</a>
         <a href="#finance">金融</a>

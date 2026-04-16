@@ -31,6 +31,46 @@
   "image": "https://richend0913.github.io/salary-navi/images/ogp.png"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "このランキングのデータ出典は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "厚生労働省「賃金構造基本統計調査」、国税庁「民間給与実態統計調査」、各業界団体の公開データなどを参考にした2026年最新の推定値です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "年収が一番高い職業は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本ランキングではパイロット（平均年収1,500万円）が1位です。航空会社の機長クラスでは2,000万円を超えるケースもあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "IT業界で年収が高い職種は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ITコンサルタント（800万円）、AIエンジニア（750万円）、フリーランスエンジニア（750万円）が上位です。AI・クラウド領域は今後さらに需要増が見込まれます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "年収500万円以上の職業はいくつある？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本ランキングでは64職種中36職種が平均年収500万円以上です。専門資格や管理職経験があると年収が上がりやすい傾向があります。"
+      }
+    }
+  ]
+}
+</script>
 <style>
 .ranking-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
 .ranking-table thead th { background: #6366f1; color: #fff; padding: 12px 14px; font-size: .85rem; font-weight: 600; text-align: left; position: sticky; top: 56px; }
@@ -165,8 +205,16 @@
           <div class="top10-cat">医療</div>
         </div>
       </a>
-      <a href="jobs/lawyer.html" class="top10-card">
+      <a href="jobs/university-professor.html" class="top10-card">
         <div class="top10-rank bronze">3</div>
+        <div class="top10-info">
+          <div class="top10-name">大学教授</div>
+          <div class="top10-salary">1,050万円</div>
+          <div class="top10-cat">教育</div>
+        </div>
+      </a>
+      <a href="jobs/lawyer.html" class="top10-card">
+        <div class="top10-rank">4</div>
         <div class="top10-info">
           <div class="top10-name">弁護士</div>
           <div class="top10-salary">1,000万円</div>
@@ -182,51 +230,43 @@
         </div>
       </a>
       <a href="jobs/accountant.html" class="top10-card">
-        <div class="top10-rank">5</div>
+        <div class="top10-rank">6</div>
         <div class="top10-info">
           <div class="top10-name">公認会計士</div>
           <div class="top10-salary">900万円</div>
           <div class="top10-cat">金融・会計</div>
         </div>
       </a>
-      <a href="jobs/freelance-engineer.html" class="top10-card">
-        <div class="top10-rank">6</div>
+      <a href="jobs/it-consultant.html" class="top10-card">
+        <div class="top10-rank">7</div>
         <div class="top10-info">
-          <div class="top10-name">フリーランスエンジニア</div>
-          <div class="top10-salary">750万円</div>
+          <div class="top10-name">ITコンサルタント</div>
+          <div class="top10-salary">800万円</div>
           <div class="top10-cat">IT</div>
         </div>
       </a>
-      <a href="jobs/university-professor.html" class="top10-card">
+      <a href="jobs/dentist.html" class="top10-card">
         <div class="top10-rank">7</div>
         <div class="top10-info">
-          <div class="top10-name">大学教授</div>
-          <div class="top10-salary">700万円</div>
-          <div class="top10-cat">教育</div>
-        </div>
-      </a>
-      <a href="jobs/dentist.html" class="top10-card">
-        <div class="top10-rank">8</div>
-        <div class="top10-info">
           <div class="top10-name">歯科医師</div>
-          <div class="top10-salary">700万円</div>
+          <div class="top10-salary">800万円</div>
           <div class="top10-cat">医療</div>
         </div>
       </a>
-      <a href="jobs/tax-accountant.html" class="top10-card">
-        <div class="top10-rank">9</div>
+      <a href="jobs/securities-analyst.html" class="top10-card">
+        <div class="top10-rank">7</div>
         <div class="top10-info">
-          <div class="top10-name">税理士</div>
-          <div class="top10-salary">700万円</div>
-          <div class="top10-cat">金融・会計</div>
+          <div class="top10-name">証券アナリスト</div>
+          <div class="top10-salary">800万円</div>
+          <div class="top10-cat">金融</div>
         </div>
       </a>
-      <a href="jobs/mr.html" class="top10-card">
+      <a href="jobs/ai-engineer.html" class="top10-card">
         <div class="top10-rank">10</div>
         <div class="top10-info">
-          <div class="top10-name">薬品メーカーMR</div>
-          <div class="top10-salary">650万円</div>
-          <div class="top10-cat">その他専門職</div>
+          <div class="top10-name">AIエンジニア</div>
+          <div class="top10-salary">750万円</div>
+          <div class="top10-cat">IT</div>
         </div>
       </a>
     </div>
@@ -265,230 +305,230 @@
           </tr>
           <tr>
             <td class="rank-bronze">3</td>
+            <td><a href="jobs/university-professor.html">大学教授</a></td>
+            <td><span class="category-tag tag-public">教育</span></td>
+            <td class="salary-cell">1,050万円</td>
+          </tr>
+          <tr>
+            <td>4</td>
             <td><a href="jobs/lawyer.html">弁護士</a></td>
             <td><span class="category-tag tag-legal">法律</span></td>
             <td class="salary-cell">1,000万円</td>
           </tr>
           <tr>
-            <td class="rank-bronze">3</td>
+            <td>4</td>
             <td><a href="jobs/actuary.html">アクチュアリー</a></td>
             <td><span class="category-tag tag-finance">金融</span></td>
             <td class="salary-cell">1,000万円</td>
           </tr>
           <tr>
-            <td>5</td>
+            <td>6</td>
             <td><a href="jobs/accountant.html">公認会計士</a></td>
             <td><span class="category-tag tag-finance">金融・会計</span></td>
             <td class="salary-cell">900万円</td>
           </tr>
           <tr>
-            <td>6</td>
-            <td><a href="jobs/freelance-engineer.html">フリーランスエンジニア</a></td>
-            <td><span class="category-tag tag-it">IT</span></td>
-            <td class="salary-cell">750万円</td>
-          </tr>
-          <tr>
             <td>7</td>
-            <td><a href="jobs/university-professor.html">大学教授</a></td>
-            <td><span class="category-tag tag-public">教育</span></td>
-            <td class="salary-cell">700万円</td>
+            <td><a href="jobs/it-consultant.html">ITコンサルタント</a></td>
+            <td><span class="category-tag tag-it">IT</span></td>
+            <td class="salary-cell">800万円</td>
           </tr>
           <tr>
             <td>7</td>
             <td><a href="jobs/dentist.html">歯科医師</a></td>
             <td><span class="category-tag tag-medical">医療</span></td>
-            <td class="salary-cell">700万円</td>
+            <td class="salary-cell">800万円</td>
           </tr>
           <tr>
             <td>7</td>
-            <td><a href="jobs/tax-accountant.html">税理士</a></td>
-            <td><span class="category-tag tag-finance">金融・会計</span></td>
-            <td class="salary-cell">700万円</td>
+            <td><a href="jobs/securities-analyst.html">証券アナリスト</a></td>
+            <td><span class="category-tag tag-finance">金融</span></td>
+            <td class="salary-cell">800万円</td>
           </tr>
           <tr>
             <td>10</td>
+            <td><a href="jobs/ai-engineer.html">AIエンジニア</a></td>
+            <td><span class="category-tag tag-it">IT</span></td>
+            <td class="salary-cell">750万円</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><a href="jobs/freelance-engineer.html">フリーランスエンジニア</a></td>
+            <td><span class="category-tag tag-it">IT</span></td>
+            <td class="salary-cell">750万円</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td><a href="jobs/tax-accountant.html">税理士</a></td>
+            <td><span class="category-tag tag-finance">金融・会計</span></td>
+            <td class="salary-cell">720万円</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td><a href="jobs/police-officer.html">警察官</a></td>
+            <td><span class="category-tag tag-public">公務員</span></td>
+            <td class="salary-cell">700万円</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td><a href="jobs/data-scientist.html">データサイエンティスト</a></td>
+            <td><span class="category-tag tag-it">IT</span></td>
+            <td class="salary-cell">700万円</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td><a href="jobs/project-manager.html">プロジェクトマネージャー</a></td>
+            <td><span class="category-tag tag-it">IT</span></td>
+            <td class="salary-cell">680万円</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td><a href="jobs/national-civil-servant.html">国家公務員</a></td>
+            <td><span class="category-tag tag-public">公務員</span></td>
+            <td class="salary-cell">680万円</td>
+          </tr>
+          <tr>
+            <td>17</td>
             <td><a href="jobs/mr.html">薬品メーカーMR</a></td>
             <td><span class="category-tag tag-other">専門職</span></td>
             <td class="salary-cell">650万円</td>
           </tr>
           <tr>
-            <td>10</td>
+            <td>17</td>
             <td><a href="jobs/veterinarian.html">獣医師</a></td>
             <td><span class="category-tag tag-medical">医療</span></td>
             <td class="salary-cell">650万円</td>
           </tr>
           <tr>
-            <td>10</td>
-            <td><a href="jobs/securities-analyst.html">証券アナリスト</a></td>
-            <td><span class="category-tag tag-finance">金融</span></td>
-            <td class="salary-cell">650万円</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td><a href="jobs/national-civil-servant.html">国家公務員</a></td>
+            <td>19</td>
+            <td><a href="jobs/firefighter.html">消防士</a></td>
             <td><span class="category-tag tag-public">公務員</span></td>
-            <td class="salary-cell">650万円</td>
+            <td class="salary-cell">640万円</td>
           </tr>
           <tr>
-            <td>14</td>
+            <td>20</td>
             <td><a href="jobs/judicial-scrivener.html">司法書士</a></td>
             <td><span class="category-tag tag-legal">法律</span></td>
             <td class="salary-cell">630万円</td>
           </tr>
           <tr>
-            <td>15</td>
+            <td>20</td>
+            <td><a href="jobs/local-civil-servant.html">地方公務員</a></td>
+            <td><span class="category-tag tag-public">公務員</span></td>
+            <td class="salary-cell">630万円</td>
+          </tr>
+          <tr>
+            <td>22</td>
             <td><a href="jobs/banker.html">銀行員</a></td>
             <td><span class="category-tag tag-finance">金融</span></td>
             <td class="salary-cell">620万円</td>
           </tr>
           <tr>
-            <td>16</td>
+            <td>22</td>
+            <td><a href="jobs/teacher.html">教師</a></td>
+            <td><span class="category-tag tag-public">教育</span></td>
+            <td class="salary-cell">620万円</td>
+          </tr>
+          <tr>
+            <td>24</td>
             <td><a href="jobs/architect.html">建築士</a></td>
             <td><span class="category-tag tag-other">専門職</span></td>
             <td class="salary-cell">600万円</td>
           </tr>
           <tr>
-            <td>16</td>
-            <td><a href="jobs/project-manager.html">プロジェクトマネージャー</a></td>
-            <td><span class="category-tag tag-it">IT</span></td>
-            <td class="salary-cell">600万円</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td><a href="jobs/local-civil-servant.html">地方公務員</a></td>
-            <td><span class="category-tag tag-public">公務員</span></td>
-            <td class="salary-cell">600万円</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td><a href="jobs/firefighter.html">消防士</a></td>
-            <td><span class="category-tag tag-public">公務員</span></td>
-            <td class="salary-cell">600万円</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td><a href="jobs/teacher.html">教師</a></td>
-            <td><span class="category-tag tag-public">教育</span></td>
-            <td class="salary-cell">600万円</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td><a href="jobs/police-officer.html">警察官</a></td>
-            <td><span class="category-tag tag-public">公務員</span></td>
-            <td class="salary-cell">600万円</td>
-          </tr>
-          <tr>
-            <td>22</td>
+            <td>25</td>
             <td><a href="jobs/pharmacist.html">薬剤師</a></td>
             <td><span class="category-tag tag-medical">医療</span></td>
             <td class="salary-cell">580万円</td>
           </tr>
           <tr>
-            <td>23</td>
-            <td><a href="jobs/marketing-manager.html">マーケティング</a></td>
-            <td><span class="category-tag tag-business">ビジネス</span></td>
-            <td class="salary-cell">550万円</td>
-          </tr>
-          <tr>
-            <td>23</td>
-            <td><a href="jobs/labor-consultant.html">社会保険労務士</a></td>
-            <td><span class="category-tag tag-legal">法律</span></td>
-            <td class="salary-cell">550万円</td>
-          </tr>
-          <tr>
-            <td>23</td>
-            <td><a href="jobs/data-scientist.html">データサイエンティスト</a></td>
+            <td>26</td>
+            <td><a href="jobs/system-engineer.html">システムエンジニア</a></td>
             <td><span class="category-tag tag-it">IT</span></td>
             <td class="salary-cell">550万円</td>
           </tr>
           <tr>
             <td>26</td>
-            <td><a href="jobs/it-consultant.html">ITコンサルタント</a></td>
-            <td><span class="category-tag tag-it">IT</span></td>
-            <td class="salary-cell">540万円</td>
+            <td><a href="jobs/marketing-manager.html">マーケティング</a></td>
+            <td><span class="category-tag tag-business">ビジネス</span></td>
+            <td class="salary-cell">550万円</td>
           </tr>
           <tr>
-            <td>27</td>
+            <td>26</td>
+            <td><a href="jobs/labor-consultant.html">社会保険労務士</a></td>
+            <td><span class="category-tag tag-legal">法律</span></td>
+            <td class="salary-cell">550万円</td>
+          </tr>
+          <tr>
+            <td>29</td>
             <td><a href="jobs/web-marketer.html">Webマーケター</a></td>
             <td><span class="category-tag tag-it">IT</span></td>
             <td class="salary-cell">530万円</td>
           </tr>
           <tr>
-            <td>28</td>
+            <td>30</td>
+            <td><a href="jobs/infra-engineer.html">インフラエンジニア</a></td>
+            <td><span class="category-tag tag-it">IT</span></td>
+            <td class="salary-cell">520万円</td>
+          </tr>
+          <tr>
+            <td>30</td>
             <td><a href="jobs/real-estate-sales.html">不動産営業</a></td>
             <td><span class="category-tag tag-business">ビジネス</span></td>
             <td class="salary-cell">520万円</td>
           </tr>
           <tr>
-            <td>28</td>
-            <td><a href="jobs/ai-engineer.html">AIエンジニア</a></td>
-            <td><span class="category-tag tag-it">IT</span></td>
-            <td class="salary-cell">520万円</td>
+            <td>32</td>
+            <td><a href="jobs/nurse.html">看護師</a></td>
+            <td><span class="category-tag tag-medical">医療</span></td>
+            <td class="salary-cell">500万円</td>
           </tr>
           <tr>
-            <td>30</td>
+            <td>32</td>
             <td><a href="jobs/insurance-agent.html">保険営業</a></td>
             <td><span class="category-tag tag-finance">金融</span></td>
             <td class="salary-cell">500万円</td>
           </tr>
           <tr>
-            <td>30</td>
+            <td>32</td>
             <td><a href="jobs/game-developer.html">ゲーム開発者</a></td>
             <td><span class="category-tag tag-it">IT</span></td>
             <td class="salary-cell">500万円</td>
           </tr>
           <tr>
-            <td>30</td>
+            <td>32</td>
             <td><a href="jobs/administrative-scrivener.html">行政書士</a></td>
             <td><span class="category-tag tag-legal">法律</span></td>
             <td class="salary-cell">500万円</td>
           </tr>
           <tr>
-            <td>30</td>
+            <td>32</td>
             <td><a href="jobs/financial-planner.html">ファイナンシャルプランナー</a></td>
             <td><span class="category-tag tag-finance">金融</span></td>
             <td class="salary-cell">500万円</td>
           </tr>
           <tr>
-            <td>30</td>
-            <td><a href="jobs/infra-engineer.html">インフラエンジニア</a></td>
+            <td>37</td>
+            <td><a href="jobs/network-engineer.html">ネットワークエンジニア</a></td>
             <td><span class="category-tag tag-it">IT</span></td>
-            <td class="salary-cell">500万円</td>
+            <td class="salary-cell">490万円</td>
           </tr>
           <tr>
-            <td>35</td>
+            <td>38</td>
             <td><a href="jobs/sales-representative.html">営業職</a></td>
             <td><span class="category-tag tag-business">ビジネス</span></td>
             <td class="salary-cell">480万円</td>
           </tr>
           <tr>
-            <td>35</td>
+            <td>38</td>
             <td><a href="jobs/civil-engineer.html">土木技術者</a></td>
             <td><span class="category-tag tag-service">建設</span></td>
             <td class="salary-cell">480万円</td>
           </tr>
           <tr>
-            <td>35</td>
+            <td>38</td>
             <td><a href="jobs/interpreter.html">通訳・翻訳</a></td>
             <td><span class="category-tag tag-other">専門職</span></td>
-            <td class="salary-cell">480万円</td>
-          </tr>
-          <tr>
-            <td>35</td>
-            <td><a href="jobs/system-engineer.html">システムエンジニア</a></td>
-            <td><span class="category-tag tag-it">IT</span></td>
-            <td class="salary-cell">480万円</td>
-          </tr>
-          <tr>
-            <td>35</td>
-            <td><a href="jobs/network-engineer.html">ネットワークエンジニア</a></td>
-            <td><span class="category-tag tag-it">IT</span></td>
-            <td class="salary-cell">480万円</td>
-          </tr>
-          <tr>
-            <td>35</td>
-            <td><a href="jobs/nurse.html">看護師</a></td>
-            <td><span class="category-tag tag-medical">医療</span></td>
             <td class="salary-cell">480万円</td>
           </tr>
           <tr>
@@ -505,14 +545,14 @@
           </tr>
           <tr>
             <td>43</td>
-            <td><a href="jobs/radiologist.html">放射線技師</a></td>
-            <td><span class="category-tag tag-medical">医療</span></td>
+            <td><a href="jobs/programmer.html">プログラマー</a></td>
+            <td><span class="category-tag tag-it">IT</span></td>
             <td class="salary-cell">450万円</td>
           </tr>
           <tr>
             <td>43</td>
-            <td><a href="jobs/programmer.html">プログラマー</a></td>
-            <td><span class="category-tag tag-it">IT</span></td>
+            <td><a href="jobs/radiologist.html">放射線技師</a></td>
+            <td><span class="category-tag tag-medical">医療</span></td>
             <td class="salary-cell">450万円</td>
           </tr>
           <tr>
@@ -529,12 +569,6 @@
           </tr>
           <tr>
             <td>47</td>
-            <td><a href="jobs/truck-driver.html">トラック運転手</a></td>
-            <td><span class="category-tag tag-service">運輸</span></td>
-            <td class="salary-cell">420万円</td>
-          </tr>
-          <tr>
-            <td>47</td>
             <td><a href="jobs/physical-therapist.html">理学療法士</a></td>
             <td><span class="category-tag tag-medical">医療</span></td>
             <td class="salary-cell">420万円</td>
@@ -547,42 +581,48 @@
           </tr>
           <tr>
             <td>47</td>
-            <td><a href="jobs/web-designer.html">Webデザイナー</a></td>
-            <td><span class="category-tag tag-it">IT</span></td>
+            <td><a href="jobs/truck-driver.html">トラック運転手</a></td>
+            <td><span class="category-tag tag-service">運輸</span></td>
             <td class="salary-cell">420万円</td>
           </tr>
           <tr>
-            <td>51</td>
+            <td>50</td>
             <td><a href="jobs/dietitian.html">管理栄養士</a></td>
             <td><span class="category-tag tag-medical">医療</span></td>
             <td class="salary-cell">400万円</td>
           </tr>
           <tr>
-            <td>51</td>
+            <td>50</td>
             <td><a href="jobs/graphic-designer.html">グラフィックデザイナー</a></td>
             <td><span class="category-tag tag-it">IT</span></td>
             <td class="salary-cell">400万円</td>
           </tr>
           <tr>
-            <td>51</td>
+            <td>50</td>
             <td><a href="jobs/construction-worker.html">建設作業員</a></td>
             <td><span class="category-tag tag-service">建設</span></td>
             <td class="salary-cell">400万円</td>
           </tr>
           <tr>
-            <td>51</td>
+            <td>50</td>
             <td><a href="jobs/youtuber.html">YouTuber</a></td>
             <td><span class="category-tag tag-other">その他</span></td>
             <td class="salary-cell">400万円</td>
           </tr>
           <tr>
-            <td>55</td>
+            <td>54</td>
+            <td><a href="jobs/web-designer.html">Webデザイナー</a></td>
+            <td><span class="category-tag tag-it">IT</span></td>
+            <td class="salary-cell">380万円</td>
+          </tr>
+          <tr>
+            <td>54</td>
             <td><a href="jobs/delivery-driver.html">配送ドライバー</a></td>
             <td><span class="category-tag tag-service">運輸</span></td>
             <td class="salary-cell">380万円</td>
           </tr>
           <tr>
-            <td>55</td>
+            <td>54</td>
             <td><a href="jobs/nursery-teacher.html">保育士</a></td>
             <td><span class="category-tag tag-public">教育</span></td>
             <td class="salary-cell">380万円</td>
@@ -648,70 +688,70 @@
     <h2 class="section-heading" id="cat-it">IT・エンジニア 年収ランキング</h2>
     <div class="cat-ranking-section">
       <div class="job-grid">
-        <a href="jobs/freelance-engineer.html" class="job-card">
-          <div class="job-name">1位 フリーランスエンジニア</div>
-          <div class="job-salary">750万円 <small>平均年収</small></div>
+        <a href="jobs/it-consultant.html" class="job-card">
+          <div class="job-name">1位 ITコンサルタント</div>
+          <div class="job-salary">800万円 <small>平均年収</small></div>
           <div class="salary-bar"><div class="salary-bar-fill" style="width:100%"></div></div>
         </a>
-        <a href="jobs/project-manager.html" class="job-card">
-          <div class="job-name">2位 プロジェクトマネージャー</div>
-          <div class="job-salary">600万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:80%"></div></div>
+        <a href="jobs/ai-engineer.html" class="job-card">
+          <div class="job-name">2位 AIエンジニア</div>
+          <div class="job-salary">750万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:94%"></div></div>
+        </a>
+        <a href="jobs/freelance-engineer.html" class="job-card">
+          <div class="job-name">2位 フリーランスエンジニア</div>
+          <div class="job-salary">750万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:94%"></div></div>
         </a>
         <a href="jobs/data-scientist.html" class="job-card">
-          <div class="job-name">3位 データサイエンティスト</div>
-          <div class="job-salary">550万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:73%"></div></div>
+          <div class="job-name">4位 データサイエンティスト</div>
+          <div class="job-salary">700万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:88%"></div></div>
         </a>
-        <a href="jobs/it-consultant.html" class="job-card">
-          <div class="job-name">4位 ITコンサルタント</div>
-          <div class="job-salary">540万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:72%"></div></div>
-        </a>
-        <a href="jobs/web-marketer.html" class="job-card">
-          <div class="job-name">5位 Webマーケター</div>
-          <div class="job-salary">530万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:71%"></div></div>
-        </a>
-        <a href="jobs/ai-engineer.html" class="job-card">
-          <div class="job-name">6位 AIエンジニア</div>
-          <div class="job-salary">520万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:69%"></div></div>
-        </a>
-        <a href="jobs/game-developer.html" class="job-card">
-          <div class="job-name">7位 ゲーム開発者</div>
-          <div class="job-salary">500万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:67%"></div></div>
-        </a>
-        <a href="jobs/infra-engineer.html" class="job-card">
-          <div class="job-name">7位 インフラエンジニア</div>
-          <div class="job-salary">500万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:67%"></div></div>
+        <a href="jobs/project-manager.html" class="job-card">
+          <div class="job-name">5位 プロジェクトマネージャー</div>
+          <div class="job-salary">680万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:85%"></div></div>
         </a>
         <a href="jobs/system-engineer.html" class="job-card">
-          <div class="job-name">9位 システムエンジニア</div>
-          <div class="job-salary">480万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:64%"></div></div>
+          <div class="job-name">6位 システムエンジニア</div>
+          <div class="job-salary">550万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:69%"></div></div>
+        </a>
+        <a href="jobs/web-marketer.html" class="job-card">
+          <div class="job-name">7位 Webマーケター</div>
+          <div class="job-salary">530万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:66%"></div></div>
+        </a>
+        <a href="jobs/infra-engineer.html" class="job-card">
+          <div class="job-name">8位 インフラエンジニア</div>
+          <div class="job-salary">520万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:65%"></div></div>
+        </a>
+        <a href="jobs/game-developer.html" class="job-card">
+          <div class="job-name">9位 ゲーム開発者</div>
+          <div class="job-salary">500万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:63%"></div></div>
         </a>
         <a href="jobs/network-engineer.html" class="job-card">
-          <div class="job-name">9位 ネットワークエンジニア</div>
-          <div class="job-salary">480万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:64%"></div></div>
+          <div class="job-name">10位 ネットワークエンジニア</div>
+          <div class="job-salary">490万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:61%"></div></div>
         </a>
         <a href="jobs/programmer.html" class="job-card">
           <div class="job-name">11位 プログラマー</div>
           <div class="job-salary">450万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:60%"></div></div>
-        </a>
-        <a href="jobs/web-designer.html" class="job-card">
-          <div class="job-name">12位 Webデザイナー</div>
-          <div class="job-salary">420万円 <small>平均年収</small></div>
           <div class="salary-bar"><div class="salary-bar-fill" style="width:56%"></div></div>
         </a>
         <a href="jobs/graphic-designer.html" class="job-card">
-          <div class="job-name">13位 グラフィックデザイナー</div>
+          <div class="job-name">12位 グラフィックデザイナー</div>
           <div class="job-salary">400万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:53%"></div></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:50%"></div></div>
+        </a>
+        <a href="jobs/web-designer.html" class="job-card">
+          <div class="job-name">13位 Webデザイナー</div>
+          <div class="job-salary">380万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:48%"></div></div>
         </a>
       </div>
     </div>
@@ -727,8 +767,8 @@
         </a>
         <a href="jobs/dentist.html" class="job-card">
           <div class="job-name">2位 歯科医師</div>
-          <div class="job-salary">700万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:58%"></div></div>
+          <div class="job-salary">800万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:67%"></div></div>
         </a>
         <a href="jobs/veterinarian.html" class="job-card">
           <div class="job-name">3位 獣医師</div>
@@ -742,8 +782,8 @@
         </a>
         <a href="jobs/nurse.html" class="job-card">
           <div class="job-name">5位 看護師</div>
-          <div class="job-salary">480万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:40%"></div></div>
+          <div class="job-salary">500万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:42%"></div></div>
         </a>
         <a href="jobs/clinical-lab-tech.html" class="job-card">
           <div class="job-name">6位 臨床検査技師</div>
@@ -807,15 +847,15 @@
           <div class="job-salary">900万円 <small>平均年収</small></div>
           <div class="salary-bar"><div class="salary-bar-fill" style="width:90%"></div></div>
         </a>
-        <a href="jobs/tax-accountant.html" class="job-card">
-          <div class="job-name">4位 税理士</div>
-          <div class="job-salary">700万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:70%"></div></div>
-        </a>
         <a href="jobs/securities-analyst.html" class="job-card">
-          <div class="job-name">5位 証券アナリスト</div>
-          <div class="job-salary">650万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:65%"></div></div>
+          <div class="job-name">4位 証券アナリスト</div>
+          <div class="job-salary">800万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:80%"></div></div>
+        </a>
+        <a href="jobs/tax-accountant.html" class="job-card">
+          <div class="job-name">5位 税理士</div>
+          <div class="job-salary">720万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:72%"></div></div>
         </a>
         <a href="jobs/judicial-scrivener.html" class="job-card">
           <div class="job-name">6位 司法書士</div>
@@ -856,33 +896,33 @@
       <div class="job-grid">
         <a href="jobs/university-professor.html" class="job-card">
           <div class="job-name">1位 大学教授</div>
-          <div class="job-salary">700万円 <small>平均年収</small></div>
+          <div class="job-salary">1,050万円 <small>平均年収</small></div>
           <div class="salary-bar"><div class="salary-bar-fill" style="width:100%"></div></div>
         </a>
-        <a href="jobs/national-civil-servant.html" class="job-card">
-          <div class="job-name">2位 国家公務員</div>
-          <div class="job-salary">650万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:93%"></div></div>
+        <a href="jobs/police-officer.html" class="job-card">
+          <div class="job-name">2位 警察官</div>
+          <div class="job-salary">700万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:67%"></div></div>
         </a>
-        <a href="jobs/local-civil-servant.html" class="job-card">
-          <div class="job-name">3位 地方公務員</div>
-          <div class="job-salary">600万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:86%"></div></div>
+        <a href="jobs/national-civil-servant.html" class="job-card">
+          <div class="job-name">3位 国家公務員</div>
+          <div class="job-salary">680万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:65%"></div></div>
         </a>
         <a href="jobs/firefighter.html" class="job-card">
-          <div class="job-name">3位 消防士</div>
-          <div class="job-salary">600万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:86%"></div></div>
+          <div class="job-name">4位 消防士</div>
+          <div class="job-salary">640万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:61%"></div></div>
+        </a>
+        <a href="jobs/local-civil-servant.html" class="job-card">
+          <div class="job-name">5位 地方公務員</div>
+          <div class="job-salary">630万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:60%"></div></div>
         </a>
         <a href="jobs/teacher.html" class="job-card">
-          <div class="job-name">3位 教師</div>
-          <div class="job-salary">600万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:86%"></div></div>
-        </a>
-        <a href="jobs/police-officer.html" class="job-card">
-          <div class="job-name">3位 警察官</div>
-          <div class="job-salary">600万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:86%"></div></div>
+          <div class="job-name">5位 教師</div>
+          <div class="job-salary">620万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:59%"></div></div>
         </a>
         <a href="jobs/nursery-teacher.html" class="job-card">
           <div class="job-name">7位 保育士</div>
@@ -933,25 +973,25 @@
     <h2 class="section-heading" id="cat-service">運輸・サービス・建設 年収ランキング</h2>
     <div class="cat-ranking-section">
       <div class="job-grid">
-        <a href="jobs/architect.html" class="job-card">
-          <div class="job-name">1位 建築士</div>
-          <div class="job-salary">600万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:100%"></div></div>
-        </a>
         <a href="jobs/mr.html" class="job-card">
-          <div class="job-name">2位 薬品メーカーMR</div>
+          <div class="job-name">1位 薬品メーカーMR</div>
           <div class="job-salary">650万円 <small>平均年収</small></div>
           <div class="salary-bar"><div class="salary-bar-fill" style="width:100%"></div></div>
+        </a>
+        <a href="jobs/architect.html" class="job-card">
+          <div class="job-name">2位 建築士</div>
+          <div class="job-salary">600万円 <small>平均年収</small></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:92%"></div></div>
         </a>
         <a href="jobs/civil-engineer.html" class="job-card">
           <div class="job-name">3位 土木技術者</div>
           <div class="job-salary">480万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:80%"></div></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:74%"></div></div>
         </a>
         <a href="jobs/interpreter.html" class="job-card">
-          <div class="job-name">4位 通訳・翻訳</div>
+          <div class="job-name">3位 通訳・翻訳</div>
           <div class="job-salary">480万円 <small>平均年収</small></div>
-          <div class="salary-bar"><div class="salary-bar-fill" style="width:80%"></div></div>
+          <div class="salary-bar"><div class="salary-bar-fill" style="width:74%"></div></div>
         </a>
         <a href="jobs/logistics-manager.html" class="job-card">
           <div class="job-name">5位 物流管理</div>
@@ -1021,9 +1061,9 @@
       <h2>年収ランキングの傾向分析</h2>
       <div class="desc-text">
         <p><strong>高収入職業の共通点：</strong>パイロット（1,500万円）、医師（1,200万円）、弁護士（1,000万円）など上位の職業は、いずれも高度な専門資格が必要で参入障壁が高い点が共通しています。資格取得までに長期間の学習・実務経験が求められる職種ほど年収が高い傾向にあります。</p>
-        <p><strong>IT業界の年収幅：</strong>IT・エンジニア職は、フリーランスエンジニア（750万円）からグラフィックデザイナー（400万円）まで幅広い年収レンジがあります。マネジメント職やAI・データ分野は年収が高く、今後も需要増が見込まれます。</p>
-        <p><strong>公務員の安定性：</strong>国家公務員（650万円）や地方公務員（600万円）は年収水準が比較的高く、退職金・年金制度も充実しています。景気に左右されにくい安定した収入が魅力です。</p>
-        <p><strong>医療職の特徴：</strong>医師（1,200万円）を筆頭に、歯科医師（700万円）、薬剤師（580万円）と医療資格系の年収は全体的に高水準です。一方で介護士（320万円）など人手不足にもかかわらず年収が低い職種もあり、処遇改善が課題となっています。</p>
+        <p><strong>IT業界の年収幅：</strong>IT・エンジニア職は、ITコンサルタント（800万円）からWebデザイナー（380万円）まで幅広い年収レンジがあります。マネジメント職やAI・データ分野は年収が高く、今後も需要増が見込まれます。</p>
+        <p><strong>公務員の安定性：</strong>国家公務員（680万円）や地方公務員（630万円）は年収水準が比較的高く、退職金・年金制度も充実しています。景気に左右されにくい安定した収入が魅力です。</p>
+        <p><strong>医療職の特徴：</strong>医師（1,200万円）を筆頭に、歯科医師（800万円）、薬剤師（580万円）と医療資格系の年収は全体的に高水準です。一方で介護士（320万円）など人手不足にもかかわらず年収が低い職種もあり、処遇改善が課題となっています。</p>
       </div>
     </div>
 
@@ -1058,8 +1098,8 @@
       <div class="desc-text">
         <p><strong>Q. このランキングのデータ出典は？</strong><br>厚生労働省「賃金構造基本統計調査」、国税庁「民間給与実態統計調査」、各業界団体の公開データなどを参考にした2026年最新の推定値です。</p>
         <p><strong>Q. 年収が一番高い職業は？</strong><br>本ランキングではパイロット（平均年収1,500万円）が1位です。航空会社の機長クラスでは2,000万円を超えるケースもあります。</p>
-        <p><strong>Q. IT業界で年収が高い職種は？</strong><br>フリーランスエンジニア（750万円）、プロジェクトマネージャー（600万円）、データサイエンティスト（550万円）が上位です。AI・クラウド領域は今後さらに需要増が見込まれます。</p>
-        <p><strong>Q. 年収500万円以上の職業はいくつある？</strong><br>本ランキングでは64職種中34職種が平均年収500万円以上です。専門資格や管理職経験があると年収が上がりやすい傾向があります。</p>
+        <p><strong>Q. IT業界で年収が高い職種は？</strong><br>ITコンサルタント（800万円）、AIエンジニア（750万円）、フリーランスエンジニア（750万円）が上位です。AI・クラウド領域は今後さらに需要増が見込まれます。</p>
+        <p><strong>Q. 年収500万円以上の職業はいくつある？</strong><br>本ランキングでは64職種中36職種が平均年収500万円以上です。専門資格や管理職経験があると年収が上がりやすい傾向があります。</p>
       </div>
     </div>
 

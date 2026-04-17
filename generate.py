@@ -680,6 +680,20 @@ def generate_tenshoku_banner():
     </div>'''
 
 
+def generate_recruit_cta(is_job_page=False):
+    """Generate BURNING BROS. delivery driver recruitment CTA banner."""
+    recruit_url = "https://richend0913.github.io/recruit/"
+    return '''
+    <div style="background:linear-gradient(135deg,#ff6b35,#f7931e);border-radius:14px;padding:28px 24px;margin:28px 0;text-align:center;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-10px;right:-10px;background:#e11d48;color:#fff;font-size:.72rem;font-weight:700;padding:6px 18px;border-radius:0 14px 0 14px;transform:rotate(0deg);">紹介報酬5万円</div>
+      <div style="font-size:.85rem;color:rgba(255,255,255,.85);margin-bottom:6px;font-weight:500;">今の年収に満足していますか？</div>
+      <div style="font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:8px;">委託配送ドライバーなら<br>月収30万円以上も可能</div>
+      <div style="font-size:.8rem;color:rgba(255,255,255,.8);margin-bottom:16px;">未経験OK・普通免許でスタート・働く時間は自分で決める</div>
+      <a href="''' + recruit_url + '''" style="display:inline-block;background:#fff;color:#f7931e;padding:12px 36px;border-radius:8px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">詳しく見る</a>
+      <div style="font-size:.7rem;color:rgba(255,255,255,.6);margin-top:12px;">BURNING BROS. 配送スタッフ募集中</div>
+    </div>'''
+
+
 def generate_salary_up_section(is_job_page=False):
     """Generate the '年収を上げる3つの方法' section."""
     prefix = "../" if is_job_page else ""
@@ -968,6 +982,8 @@ def generate_job_page(job, category_name):
 
 {generate_affiliate_section(title)}
 
+{generate_recruit_cta(is_job_page=True) if avg < 500 else ""}
+
     <div class="card">
       <h2>関連する職業の年収</h2>
       <div class="tag-list">
@@ -1085,6 +1101,8 @@ def generate_index():
     <div class="ad-space">広告</div>
 
 {categories_html}
+
+{generate_recruit_cta(is_job_page=False)}
 
 {generate_tenshoku_banner()}
 

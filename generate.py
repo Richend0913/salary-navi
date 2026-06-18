@@ -939,7 +939,7 @@ def generate_job_page(job, category_name):
       </div>
     </div>
 
-    <div class="aff-cta" style="margin:22px 0;padding:18px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff"><div style="font-size:17px;font-weight:bold;margin-bottom:6px">&#128176; 今の年収、適正ですか？</div><div style="font-size:13px;margin-bottom:12px;opacity:.95">同じ職種でも転職で年収100万円アップは珍しくありません。まずは自分の市場価値を無料でチェック。</div><a href="https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5YZ76" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;border-radius:8px;font-weight:bold;text-decoration:none">無料で年収診断・転職相談する &rarr;</a></div>
+    <div class="aff-cta" style="margin:22px 0;padding:18px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff"><div style="font-size:17px;font-weight:bold;margin-bottom:6px">&#128176; 今の年収、適正ですか？</div><div style="font-size:13px;margin-bottom:12px;opacity:.95">同じ職種でも転職で年収100万円アップは珍しくありません。まずは自分の市場価値を無料でチェック。</div><a href="https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5ZEMP" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;border-radius:8px;font-weight:bold;text-decoration:none">無料で年収診断・転職相談する &rarr;</a></div>
 
     <div class="card">
       <h2>年代別の平均年収</h2>
@@ -954,7 +954,7 @@ def generate_job_page(job, category_name):
 {size_bars}      </div>
     </div>
 
-    <div class="aff-cta" style="margin:22px 0;padding:18px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff"><div style="font-size:17px;font-weight:bold;margin-bottom:6px">&#128176; 今の年収、適正ですか？</div><div style="font-size:13px;margin-bottom:12px;opacity:.95">同じ職種でも転職で年収100万円アップは珍しくありません。まずは自分の市場価値を無料でチェック。</div><a href="https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5YZ76" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;border-radius:8px;font-weight:bold;text-decoration:none">無料で年収診断・転職相談する &rarr;</a></div>
+    <div class="aff-cta" style="margin:22px 0;padding:18px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff"><div style="font-size:17px;font-weight:bold;margin-bottom:6px">&#128176; 今の年収、適正ですか？</div><div style="font-size:13px;margin-bottom:12px;opacity:.95">同じ職種でも転職で年収100万円アップは珍しくありません。まずは自分の市場価値を無料でチェック。</div><a href="https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5ZEMP" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;border-radius:8px;font-weight:bold;text-decoration:none">無料で年収診断・転職相談する &rarr;</a></div>
 
     <div class="card">
       <h2>必要な資格・スキル</h2>
@@ -978,7 +978,7 @@ def generate_job_page(job, category_name):
       </table>
     </div>
 
-    <div class="aff-cta" style="margin:22px 0;padding:18px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff"><div style="font-size:17px;font-weight:bold;margin-bottom:6px">&#128176; 今の年収、適正ですか？</div><div style="font-size:13px;margin-bottom:12px;opacity:.95">同じ職種でも転職で年収100万円アップは珍しくありません。まずは自分の市場価値を無料でチェック。</div><a href="https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5YZ76" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;border-radius:8px;font-weight:bold;text-decoration:none">無料で年収診断・転職相談する &rarr;</a></div>
+    <div class="aff-cta" style="margin:22px 0;padding:18px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff"><div style="font-size:17px;font-weight:bold;margin-bottom:6px">&#128176; 今の年収、適正ですか？</div><div style="font-size:13px;margin-bottom:12px;opacity:.95">同じ職種でも転職で年収100万円アップは珍しくありません。まずは自分の市場価値を無料でチェック。</div><a href="https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5ZEMP" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;border-radius:8px;font-weight:bold;text-decoration:none">無料で年収診断・転職相談する &rarr;</a></div>
 
 {generate_affiliate_section(title)}
 
@@ -1005,6 +1005,7 @@ def generate_job_page(job, category_name):
     <p>&copy; {YEAR} 年収ナビ（Salary Navigator）- 日本の職業別年収データ</p>
     <p style="margin-top:8px"><a href="../index.html">トップページ</a></p>
   </footer>
+<img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B1D5G+9K4NIQ+5BJK+5ZEMP" alt="">
 </body>
 </html>'''
     return html
@@ -1098,7 +1099,7 @@ def generate_index():
       </div>
     </div>
 
-    <div class="aff-cta" style="margin:22px 0;padding:18px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff"><div style="font-size:17px;font-weight:bold;margin-bottom:6px">&#128176; 今の年収、適正ですか？</div><div style="font-size:13px;margin-bottom:12px;opacity:.95">同じ職種でも転職で年収100万円アップは珍しくありません。まずは自分の市場価値を無料でチェック。</div><a href="https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5YZ76" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;border-radius:8px;font-weight:bold;text-decoration:none">無料で年収診断・転職相談する &rarr;</a></div>
+    <div class="aff-cta" style="margin:22px 0;padding:18px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff"><div style="font-size:17px;font-weight:bold;margin-bottom:6px">&#128176; 今の年収、適正ですか？</div><div style="font-size:13px;margin-bottom:12px;opacity:.95">同じ職種でも転職で年収100万円アップは珍しくありません。まずは自分の市場価値を無料でチェック。</div><a href="https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5ZEMP" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;border-radius:8px;font-weight:bold;text-decoration:none">無料で年収診断・転職相談する &rarr;</a></div>
 
 {categories_html}
 
@@ -1106,7 +1107,7 @@ def generate_index():
 
 {generate_tenshoku_banner()}
 
-    <div class="aff-cta" style="margin:22px 0;padding:18px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff"><div style="font-size:17px;font-weight:bold;margin-bottom:6px">&#128176; 今の年収、適正ですか？</div><div style="font-size:13px;margin-bottom:12px;opacity:.95">同じ職種でも転職で年収100万円アップは珍しくありません。まずは自分の市場価値を無料でチェック。</div><a href="https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5YZ76" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;border-radius:8px;font-weight:bold;text-decoration:none">無料で年収診断・転職相談する &rarr;</a></div>
+    <div class="aff-cta" style="margin:22px 0;padding:18px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;text-align:center;color:#fff"><div style="font-size:17px;font-weight:bold;margin-bottom:6px">&#128176; 今の年収、適正ですか？</div><div style="font-size:13px;margin-bottom:12px;opacity:.95">同じ職種でも転職で年収100万円アップは珍しくありません。まずは自分の市場価値を無料でチェック。</div><a href="https://px.a8.net/svt/ejp?a8mat=4B1D5G+9K4NIQ+5BJK+5ZEMP" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#fff;color:#1e3a8a;padding:11px 26px;border-radius:8px;font-weight:bold;text-decoration:none">無料で年収診断・転職相談する &rarr;</a></div>
 
     <div class="card">
       <h2>年収ナビについて</h2>

@@ -8,7 +8,8 @@ from datetime import datetime
 from urllib.parse import quote
 
 SITE_URL = "https://richend0913.github.io/salary-navi"
-ADSENSE = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6327505164684489" crossorigin="anonymous"></script>'
+# AdSenseは審査2回落ち(github.ioサブドメイン)→死にスクリプトで表示ゼロ。除去。収益はA8転職アフィリに一本化。
+ADSENSE = ''
 YEAR = datetime.now().year
 
 # ============================================================
